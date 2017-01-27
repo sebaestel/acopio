@@ -4,17 +4,19 @@
 @import 'aside'
 
 body
-	background-color background-color
+	background-color rgba(239,239,239,.4)
 	color text-color
 	font-family 'Open Sans', sans-serif
 	padding 0px
 	margin 0px
+	padding-bottom 30px
 	
 	h1, h2, h3, h4, h5, h6
 		color titles-color
-
-ng-map
-	height 700px
+#add-place
+	margin-top	10px
+#home-map
+	height 400px!important
 	span(1/1)
 .search-place
 	width 360px
@@ -41,6 +43,76 @@ ng-map
 		font-size 16px
 		padding 10px
 		box-sizing border-box
+.container
+	width 90%
+	max-width 600px
+	margin 0 auto
+	.col,.col-100
+		span(1/2)
+		box-sizing border-box
+		padding 0px 10px
+		label
+			color #000
+			span(1/1)
+			margint-bottom 5px
+		input[type="text"]
+			span(1/1)
+			border 1px solid #efefef
+			padding 10px
+			border-radius 3px
+			margint-bottom 15px
+			box-sizing border-box
+	.col-100
+		span(1/1)
+.content
+	center(960px)
+	.campaign-container
+		width 100%
+		display flex
+		flex-flow  row wrap
+		justify-content space-between
+		align-items stretch
+
+	h1
+		span(1/1)
+		font-family 'Raleway', sans-serif
+		font-size 30px
+		font-weight 100
+	.campaign
+		width 32%
+		background-color #fff
+		min-height 140px
+		position relative
+		margin-bottom 15px
+		box-shadow 0 0 2px 1px rgba(0,0,0,.1)
+		padding-bottom 50px
+
+		figure
+			span(1/1)
+			padding 0px
+			margin 0px
+			img
+				width 100%
+		h2
+			margin 0px
+		p
+			font-size 14px
+		.text
+			span(1/1)
+			padding 10px
+			box-sizing border-box
+		a
+			background-color #2ecc71
+			padding 10px
+			color #fff
+			text-decoration none
+			border-radius 3px
+			display inline-block
+			margin-left 10px
+			position absolute
+			bottom 10px
+			right 10px
+
 .placeInfo	
 	width 360px
 	position absolute

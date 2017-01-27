@@ -14,7 +14,7 @@ app.config(function($stateProvider, $urlRouterProvider, $translateProvider) {
 
     });
     $translateProvider.translations('es', {
-        hello: 'Hello'
+        hello: 'Hola'
     });
     $translateProvider.preferredLanguage('es');
 
@@ -33,6 +33,15 @@ app.config(function($stateProvider, $urlRouterProvider, $translateProvider) {
                 'content@': {
                     templateUrl: 'templates/home.html',
                     controller: 'homeController'
+                }
+            }
+        })
+        .state('root.add', {
+            url: '/add',
+            views: {
+                'content@': {
+                    templateUrl: 'templates/place.html',
+                    controller: 'placeController'
                 }
             }
         });

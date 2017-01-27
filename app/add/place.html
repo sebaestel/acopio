@@ -1,0 +1,31 @@
+<div class="container">
+	<h1>Agregar nuevo centro de acopio</h1>
+	<div class="col">
+		<label>Nombre del lugar</label>
+		<input type="text" name="name" placeholder="Ej: Compañia de bomberos numero 1">
+		<label>Horario de atencion</label>
+		<input type="text" name="start" placeholder="9:00">
+		<input type="text" name="end" placeholder="21:00">
+		<label><input type="checkbox"/> Es un albergue</label>
+	</div>
+	<div class="col">
+		<label>Tipos de ayuda</label>
+		<label><input type="checkbox"/> Es un albergue</label>
+	</div>
+
+	<div class="col-100">
+		<label>Direccion</label>
+		<input type="text" name="address" ng-model="address">
+		<div map-lazy-load="https://maps.google.com/maps/api/js">
+			<ng-map id="add-place" center="{{ address }}" zoom="14" on-click="placeMarker()">
+				<marker
+					ng-repeat="place in places"
+					position="{{ place.lat }},{{ place.lng }}"
+					icon="assets/otros.png">
+				</marker>
+			</ng-map>
+		</div>
+		<label>Tipo de ayuda</label>
+		<input type="checkbox" name="end">
+	</div>
+<div>
