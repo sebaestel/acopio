@@ -1,5 +1,5 @@
 <form class="search-place">
-	<label>Buscar localidad</label>
+	<label>Buscar centros por region</label>
 	<input 
 		places-auto-complete 
 		ng-model="address"
@@ -7,11 +7,12 @@
 		types="['geocode']"
 		on-place-changed="placeChanged()" 
 		type="text" 
-		placeholder="¿Donde quieres ir? Ej: Chiloe"/>
+		placeholder="Ej: Temuco"/>
 </form>
 <div class="placeInfo" ng-show="showPlace">
 	<h1>{{ place.name }}</h1>
-	<h2>{{ place.contact.name }} - {{ place.contact.phone }}</h2>
+	<h2>{{ place.address }}</h2>
+	<h2>Horario: {{ place.schedule.start }} - {{ place.schedule.end }}</h2>
 	<h2>Tipo de donacion</h2>
 	<ul>
 		<li ng-repeat="type in place.product_type track by $index">{{ type }}</li>
