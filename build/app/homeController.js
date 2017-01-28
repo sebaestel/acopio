@@ -15,6 +15,7 @@ app.controller('homeController', function($scope, NgMap, $http) {
     	//$scope.tripTo = info.pos.lat + "," + info.pos.lon;
     }
 
+    // Centros de acopio
 	$http
 		.get('https://chile-ayuda-api.herokuapp.com/places')
 		.then(function (response) {
@@ -26,11 +27,17 @@ app.controller('homeController', function($scope, NgMap, $http) {
                 $scope.places.push(rest);
             });
 		});
-
+    // Campañas
 	$http
 		.get('http://www.chileayuda.com/blog/wp-json/wp/v2/posts?categories=2')
 		.then(function (response) {
 			$scope.campaigns = response.data;
+		});	
+    // Alertas onemi
+	$http
+		.get('http://www.chileayuda.com/events-onemi.json')
+		.then(function (response) {
+			$scope.alerts = response.data;
 		});
 
 	// $http

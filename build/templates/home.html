@@ -1,5 +1,5 @@
 <form class="search-place" ng-class="[{initial: mapLoader}]">
-	<label>¿Donde quieres ayudar?</label>
+	<label>Ingresa Donde quieres ayudar</label>
 	<input 
 		places-auto-complete 
 		ng-model="address"
@@ -20,11 +20,19 @@
 	<img ng-show="place.image" src="{{ place.image }}" style="width:100%"/>
 	<img ng-hide="place.image" src="https://maps.googleapis.com/maps/api/streetview?size=600x300&location={{ place.pos.lat }},{{ place.pos.lon }}&heading=151.78&pitch=-0.76&key=AIzaSyAcC-IRRpgd0zHOKr65DqfIlsS8zBE9ppU" style="width:100%"/>
 </div>
-<div class="trip" ng-show="showPlace">
-	<h2>Como llegar</h2>
+<div class="trip" ng-hide="mapLoader">
+	<h2>Alertas onemi</h2>
 	<div id="indications">
+		<ul class="onemi-alerts">
+			<li ng-repeat="alert in alerts | filter:'incendio forestal'">
+				<a ng-href="http://www.onemi.cl/{{ alert.url }}" target="blank_">
+					<img ng-src="http://www.onemi.cl/{{ alert.image }}"/>
+					<strong>
+						<span class="place">{{ alert.place }}</span> - {{ alert.title }} - {{ alert.day }} {{ alert.hour }}</strong>
+				</a>
+			</li>
+		</ul>
 	</div>
-
 </div>
 <div map-lazy-load="https://maps.google.com/maps/api/js">
 	<div class="map-loader" ng-show="mapLoader">
@@ -33,13 +41,12 @@
 		id="home-map" 
 		center="{{ currentLocation }}" 
 		styles='[{"stylers":[{"saturation":-100}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#0099dd"}]},{"elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#aadd55"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"road.arterial","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"visibility":"on"}]},{}]'
-		zoom="14">
+		zoom="12">
 		<marker
 			ng-repeat="place in places"
 			on-click="placeInfo({{ place }})"
 			position="{{ place.pos.lat }},{{ place.pos.lon }}"
-
-			icon="assets/otros.png">
+			icon="assets/azul.png">
 		</marker>		
 		<marker
 			ng-repeat="place in gas"
@@ -76,5 +83,17 @@
 		<h1>Informacion oficial</h1>
 		<a class="twitter-timeline" data-lang="es" data-link-color="#E81C4F" href="https://twitter.com/JosephCastroR/lists/noticiasincendiochile2017"></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 	</aside>
-
 </div>
+<section id="more-help">
+	<div class="container">
+		<h2>¡Necesitamos que nos ayudes a ayudar!</h2>
+		<p>Es muy importante para todos saber que es lo que esta pasando, es por eso que te pedimos ayuda para lograr recopilar la mayor cantidad de información sobre esta tragedia.</p>
+		<a href="https://docs.google.com/forms/d/e/1FAIpQLSfvfuwF2SzFtlExXRSRv-iuuiB-NSemw38Q5ybS3g7uwTbPpg/viewform" target="blank_" class="btn shelter">
+			Agregar centro de acopio 
+		</a>
+		<a href="https://docs.google.com/forms/d/e/1FAIpQLSdswFCJi4bgS9nY9aIanrzn5_zgQW4WKksYMyJzUciHuUkoiQ/viewform" target="blank_"  class="btn place">
+			Agregar lugar afectado 
+		</a> </br>
+		<h3>Cualquier duda o consulta escríbenos a <a href="mailto:contacto@chileayuda.com">contacto@chileayuda.com</a></h3>
+	</div>
+</section>

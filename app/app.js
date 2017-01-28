@@ -24,6 +24,9 @@ app.config(function($stateProvider, $urlRouterProvider, $translateProvider) {
                 'header': {
                     templateUrl: 'templates/header.html',
                     controller: 'headerController'
+                },
+                'footer': {
+                    templateUrl: 'templates/footer.html',
                 }
             }
         })
