@@ -13,10 +13,27 @@ body
 	
 	h1, h2, h3, h4, h5, h6
 		color titles-color
+.map-loader 
+	span(1/1)
+	height 450px
+	position absolute
+	background-color rgba(0, 0, 0, .5)
+	z-index 999
+	top 60px
+	.spinner
+		position absolute
+		left calc(50% - 30px)
+		border 5px solid #f3f3f3
+		border-top 5px solid #3498db
+		border-radius 50%
+		width 60px
+		height 60px
+		animation spin 1s linear infinite
+		top 170px
 #add-place
 	margin-top	10px
 #home-map
-	height 400px!important
+	height 450px!important
 	span(1/1)
 .search-place
 	width 360px
@@ -65,19 +82,27 @@ body
 	.col-100
 		span(1/1)
 .content
-	center(960px)
+	center(1200px)
+	aside
+		width 25%
+		float left
+		margin-left 3%
+		max-height 800px
+		overflow scroll
 	.campaign-container
-		width 100%
+		width 70%
 		display flex
 		flex-flow  row wrap
 		justify-content space-between
 		align-items stretch
+		float left
 
 	h1
 		span(1/1)
 		font-family 'Raleway', sans-serif
 		font-size 30px
 		font-weight 100
+		
 	.campaign
 		width 32%
 		background-color #fff
@@ -95,8 +120,9 @@ body
 				width 100%
 		h2
 			margin 0px
+			font-size 13px
 		p
-			font-size 14px
+			font-size 13px
 		.text
 			span(1/1)
 			padding 10px
@@ -106,13 +132,43 @@ body
 			padding 10px
 			color #fff
 			text-decoration none
-			border-radius 3px
 			display inline-block
 			margin-left 10px
 			position absolute
 			bottom 10px
 			right 10px
-
+			font-size 13px
+.trip
+	width 360px
+	position absolute
+	background-color #fff
+	border-radius 2px
+	top 70px
+	z-index 999
+	right 10px
+	box-shadow 0 0 5px 1px rgba(0,0,0,.2)
+	h2
+		background-color #7f8c8d
+		span(1/1)
+		color #fff
+		font-size 14px
+		padding 10px
+		box-sizing border-box
+		border-radius 2px 2px 0px 0px
+		margin 0px
+		font-weight 100
+	#indications
+		font-size 12px
+		max-height 370px
+		overflow scroll
+		span(1/1)
+		.adp-marker
+			width 11px
+			height 17px
+			margin 10px
+		.adp-directions
+			width 100%
+	
 .placeInfo	
 	width 360px
 	position absolute
@@ -151,3 +207,9 @@ body
 			padding 5px
 			color #fff
 			margin-right 5px
+
+@keyframes spin
+	0%
+		transform rotate(0deg)
+	100%
+		transform rotate(360deg)
