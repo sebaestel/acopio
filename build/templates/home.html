@@ -70,13 +70,17 @@
 		<h1>¿Dónde ayudar?</h1>
 		<article class="campaign" ng-repeat="campaign in campaigns">
 			<figure>
-				<img ng-src="{{ campaign.acf.principal_image }}"/>
+				<a href="{{ campaign.acf.url }}" target="balnk_">
+					<img ng-src="{{ campaign.acf.principal_image }}"/>
+				</a>
 			</figure>
 			<div class="text">
-				<h2>{{ campaign.title.rendered }}</h2>
-				<p>{{ campaign.acf.description }}</p>
+				<a href="{{ campaign.acf.url }}" target="balnk_">
+					<h2>{{ campaign.title.rendered }}</h2>
+					<p>{{ campaign.acf.description }}</p>
+				</a>
 			</div>
-			<a href="{{ campaign.acf.url }}" target="balnk_">Ir al sitio de la campaña</a>
+			<a href="{{ campaign.acf.url }}" class="action" target="balnk_">Ir al sitio de la campaña</a>
 		</article>
 	</div>
 	<aside>
