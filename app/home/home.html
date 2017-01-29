@@ -37,7 +37,6 @@
 <div map-lazy-load="https://maps.google.com/maps/api/js">
 	<div class="map-loader" ng-show="mapLoader">
 	</div>
-
 	<ng-map 
 		id="home-map" 
 		center="{{ currentLocation }}" 
@@ -85,6 +84,18 @@
 		<a class="twitter-timeline" data-lang="es" data-link-color="#E81C4F" href="https://twitter.com/JosephCastroR/lists/noticiasincendiochile2017"></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 	</aside>
 </div>
+<!-- 
+<section id="news">
+	<div class="content">
+		<article ng-repeat="article in news">
+			<a ng-href="{{ article.link }}" target="blank_">
+				<strong>{{ article.title }}</strong>
+				<div ng-bind-html="article.description"></div>
+			</a>
+		</article>
+	</div>
+</section> -->
+
 <section id="more-help">
 	<div class="container">
 		<h2>¡Necesitamos que nos ayudes a ayudar!</h2>
