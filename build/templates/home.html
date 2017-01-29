@@ -1,5 +1,5 @@
 <form class="search-place" ng-class="[{initial: mapLoader}]">
-	<label>Ingresa Donde quieres ayudar</label>
+	<label>Ingresa dónde quieres ayudar</label>
 	<input 
 		places-auto-complete 
 		ng-model="address"
@@ -13,7 +13,7 @@
 	<h1>{{ place.name }}</h1>
 	<h2>{{ place.address }}</h2>
 	<h2 ng-if="place.schedule.length > 0 ">Horario: {{ place.schedule }}</h2>
-	<h2>Tipo de donacion</h2>
+	<h2>Tipo de donación</h2>
 	<ul ng-show="place.product_type">
 		<li ng-repeat="type in place.product_type track by $index">{{ type }}</li>
 	</ul>
@@ -21,7 +21,7 @@
 	<img ng-hide="place.image" src="https://maps.googleapis.com/maps/api/streetview?size=600x300&location={{ place.pos.lat }},{{ place.pos.lon }}&heading=151.78&pitch=-0.76&key=AIzaSyAcC-IRRpgd0zHOKr65DqfIlsS8zBE9ppU" style="width:100%"/>
 </div>
 <div class="trip" ng-hide="mapLoader">
-	<h2>Alertas onemi</h2>
+	<h2>Alertas Onemi</h2>
 	<div id="indications">
 		<ul class="onemi-alerts">
 			<li ng-repeat="alert in alerts | filter:'incendio forestal'">
@@ -67,7 +67,7 @@
 </div>
 <div class="content">
 	<div class="campaign-container">
-		<h1>Donde ayudar?</h1>
+		<h1>¿Dónde ayudar?</h1>
 		<article class="campaign" ng-repeat="campaign in campaigns">
 			<figure>
 				<img ng-src="{{ campaign.acf.principal_image }}"/>
@@ -80,7 +80,7 @@
 		</article>
 	</div>
 	<aside>
-		<h1>Informacion oficial</h1>
+		<h1>Información oficial</h1>
 		<a class="twitter-timeline" data-lang="es" data-link-color="#E81C4F" href="https://twitter.com/JosephCastroR/lists/noticiasincendiochile2017"></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 	</aside>
 </div>
@@ -98,13 +98,13 @@
 
 <section id="more-help">
 	<div class="container">
-		<h2>¡Necesitamos que nos ayudes a ayudar!</h2>
-		<p>Es muy importante para todos saber que es lo que esta pasando, es por eso que te pedimos ayuda para lograr recopilar la mayor cantidad de información sobre esta tragedia.</p>
+		<h2>¡Ayúdanos a ayudar!</h2>
+		<p>Para todos es muy importante saber lo que está pasando, por eso te pedimos ayuda para lograr recopilar la mayor cantidad de información sobre esta tragedia.</p>
 		<a href="https://docs.google.com/forms/d/e/1FAIpQLSfvfuwF2SzFtlExXRSRv-iuuiB-NSemw38Q5ybS3g7uwTbPpg/viewform" target="blank_" class="btn shelter">
-			Agregar centro de acopio 
+			Agregar Centro de Acopio
 		</a>
 		<a href="https://docs.google.com/forms/d/e/1FAIpQLSdswFCJi4bgS9nY9aIanrzn5_zgQW4WKksYMyJzUciHuUkoiQ/viewform" target="blank_"  class="btn place">
-			Agregar lugar afectado 
+			Agregar Lugar Afectado 
 		</a> </br>
 		<h3>Cualquier duda o consulta escríbenos a <a href="mailto:contacto@chileayuda.com">contacto@chileayuda.com</a></h3>
 	</div>
