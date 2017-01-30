@@ -39,12 +39,15 @@ app.controller('homeController', function($scope, NgMap, $http) {
 		.then(function (response) {
 			$scope.alerts = response.data;
 		});
-	// $http
-	// 	.get('data/rss.rss')
-	// 	.then(function (response) {
-	// 		console.log(response.data.channel);
-	// 		$scope.news = response.data.channel.item;
-	// 	});
+
+    // Situacion actual
+	$http
+		.get('http://www.chileayuda.com/emol-counter.json')
+		.then(function (response) {
+			console.log(response)
+			$scope.actualSituation = response.data;
+		});
+
 
 	// $http
 	// 	.get('data/gas.json')

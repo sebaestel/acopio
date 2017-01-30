@@ -84,8 +84,33 @@
 		</article>
 	</div>
 	<aside>
+		<h1>Situación actual</h1>
+		<div class="counter">
+			<div class="half">
+				<strong>Activos</strong>
+				<span class="actives">{{ actualSituation[0].actives }}</span>
+			</div>			
+			<div class="half">
+				<strong>Controlados</strong>
+				<span class="controlled">{{ actualSituation[0].controlled }}</span>
+			</div>			
+			<div class="half">
+				<strong>En combate</strong>
+				<span class="combat">{{ actualSituation[0].combat }}</span>
+			</div>			
+			<div class="half">
+				<strong>Extinguidos</strong>
+				<span class="killed">{{ actualSituation[0].killed }}</span>
+			</div>		
+			<div class="complete">
+				<strong>Hectareas perdidas</strong>
+				<span class="total">{{ actualSituation[0].totalha }}</span>
+			</div>
+		</div>
 		<h1>Información oficial</h1>
-		<a class="twitter-timeline" data-lang="es" data-link-color="#E81C4F" href="https://twitter.com/JosephCastroR/lists/noticiasincendiochile2017"></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+		<div class="aside-twitter">
+			<a class="twitter-timeline" data-lang="es" data-link-color="#E81C4F" href="https://twitter.com/JosephCastroR/lists/noticiasincendiochile2017"></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+		</div>
 	</aside>
 </div>
 <!-- 
