@@ -47,5 +47,32 @@ app.config(function($stateProvider, $urlRouterProvider, $translateProvider) {
                     controller: 'placeController'
                 }
             }
+        })
+        .state('root.timelineController', {
+            url: '/timeline',
+            views: {
+                'content@': {
+                    templateUrl: 'templates/timeline.html',
+                    controller: 'timelineController'
+                }
+            }
+        })
+        .state('root.evolution', {
+            url: '/evolution',
+            views: {
+                'content@': {
+                    templateUrl: 'templates/compare.html',
+                    controller: 'compareController'
+                }
+            }
+        })
+        .state('root.compare', {
+            url: '/compare',
+            views: {
+                'content@': {
+                    templateUrl: 'templates/compare.html',
+                    controller: 'compareController'
+                }
+            }
         });
 });

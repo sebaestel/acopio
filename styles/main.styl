@@ -17,6 +17,11 @@ body
 		color titles-color
 	a
 		color #2980b9
+#principal-map
+	span(1/1)
+	position relative
+	box-shadow 0 0 5px 1px rgba(0,0,0,.2)
+	background-color #fff
 .map-loader 
 	span(1/1)
 	height 450px
@@ -100,8 +105,39 @@ body
 		width 25%
 		float left
 		margin-left 3%
-		max-height 800px
-		overflow scroll
+		.aside-twitter
+			max-height 800px
+			overflow scroll
+			span(1/1)
+		.counter
+			span(1/1)
+			div
+				span
+					padding 10px 0px
+					color #fff
+					background-color #7f8c8d
+					border-radius 2px
+					span(1/1)
+					&.actives
+						background-color #34495e
+					&.controlled
+						background-color #f1c40f
+					&.killed
+						background-color #2ecc71
+					&.combat
+						background-color #c0392b
+						
+				strong
+					font-weight 100
+					color #000
+			.half
+				col(1/2)
+				width 45%
+				text-align center
+			.complete
+				col(1/1)
+				text-align center
+				width 93%
 	.campaign-container
 		width 70%
 		display flex
@@ -180,17 +216,15 @@ body
 	width 360px
 	position absolute
 	background-color #fff
-	border-radius 2px
-	top 70px
+	top 75px
 	z-index 999
 	right 10px
-	box-shadow 0 0 5px 1px rgba(0,0,0,.2)
 	h2
-		background-color #7f8c8d
+		background-color #373e46
 		span(1/1)
 		color #fff
 		font-size 14px
-		padding 10px
+		padding 17px 10px
 		box-sizing border-box
 		border-radius 2px 2px 0px 0px
 		margin 0px

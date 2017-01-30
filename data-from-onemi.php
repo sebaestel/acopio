@@ -46,6 +46,6 @@ echo $resp;
 	str = JSON.stringify(events);
 	str = JSON.stringify(events, null, 4); // (Optional) beautiful indented output.
 
-	$.post( "create-json.php", { data: str } );
+	$.post( "create-json.php", { data: str, name: "events-onemi" } );
 
 </script>
