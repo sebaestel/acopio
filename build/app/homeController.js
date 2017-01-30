@@ -2,6 +2,8 @@ app.controller('homeController', function($scope, NgMap, $http) {
 	$scope.title =  "Map";
     $scope.showPlace = false;
 	$scope.mapLoader = true;
+	$('#ushahidi').attr('width',$( window ).width());
+	$("#ushahidi").contents().find(".button-alpha").remove();
 	$scope.placeChanged = function() {
 		$scope.searchPlace = this.getPlace();
 		$scope.map.setCenter($scope.searchPlace.geometry.location);

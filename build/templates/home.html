@@ -1,14 +1,3 @@
-<form class="search-place" ng-class="[{initial: mapLoader}]">
-	<label>Ingresa dónde quieres ayudar</label>
-	<input 
-		places-auto-complete 
-		ng-model="address"
-		component-restrictions="{country:'cl'}"
-		types="['geocode']"
-		on-place-changed="placeChanged()" 
-		type="text"
-		placeholder="Ej: Alhué"/>
-</form>
 <div class="placeInfo" ng-show="showPlace">
 	<h1>{{ place.name }}</h1>
 	<h2>{{ place.address }}</h2>
@@ -20,7 +9,7 @@
 	<img ng-show="place.image" src="{{ place.image }}" style="width:100%"/>
 	<img ng-hide="place.image" src="https://maps.googleapis.com/maps/api/streetview?size=600x300&location={{ place.pos.lat }},{{ place.pos.lon }}&heading=151.78&pitch=-0.76&key=AIzaSyAcC-IRRpgd0zHOKr65DqfIlsS8zBE9ppU" style="width:100%"/>
 </div>
-<div class="trip" ng-hide="mapLoader">
+<div class="trip">
 	<h2>Alertas Onemi</h2>
 	<div id="indications">
 		<ul class="onemi-alerts">
@@ -34,36 +23,9 @@
 		</ul>
 	</div>
 </div>
-<div map-lazy-load="https://maps.google.com/maps/api/js">
-	<div class="map-loader" ng-show="mapLoader">
-	</div>
-	<ng-map 
-		id="home-map" 
-		center="{{ currentLocation }}" 
-		styles='[{"stylers":[{"saturation":-100}]},{"featureType":"water","elementType":"geometry.fill","stylers":[{"color":"#0099dd"}]},{"elementType":"labels","stylers":[{"visibility":"off"}]},{"featureType":"poi.park","elementType":"geometry.fill","stylers":[{"color":"#aadd55"}]},{"featureType":"road.highway","elementType":"labels","stylers":[{"visibility":"on"}]},{"featureType":"road.arterial","elementType":"labels.text","stylers":[{"visibility":"on"}]},{"featureType":"road.local","elementType":"labels.text","stylers":[{"visibility":"on"}]},{}]'
-		zoom="12">
-		<marker
-			ng-repeat="place in places"
-			on-click="placeInfo({{ place }})"
-			position="{{ place.pos.lat }},{{ place.pos.lon }}"
-			icon="assets/azul.png">
-		</marker>		
-		<marker
-			ng-repeat="place in gas"
-			on-click="placeInfo({{ place }})"
-			position="{{ place.ubicacion.latitud }},{{ place.ubicacion.longitud }}"
-			icon="assets/gas.png">
-		</marker>
 
-		<directions 
-          draggable="false"
-          panel="indications"
-          travel-mode="DRIVING"
-          origin="{{ currentLocation }}"
-          destination="{{ tripTo }}">
-        </directions>
-
-	</ng-map>
+<div id="principal-map">
+	<iframe id="ushahidi" width="560" height="480" src="https://chileayuda.ushahidi.io/views/map" frameborder="0" allowfullscreen></iframe>
 </div>
 <div class="content">
 	<div class="campaign-container">
