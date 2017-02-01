@@ -12,7 +12,7 @@ body
 	padding 0px
 	margin 0px
 	padding-bottom 30px
-	
+
 	h1, h2, h3, h4, h5, h6
 		color titles-color
 	a
@@ -22,7 +22,7 @@ body
 	position relative
 	box-shadow 0 0 5px 1px rgba(0,0,0,.2)
 	background-color #fff
-.map-loader 
+.map-loader
 	span(1/1)
 	height 450px
 	position absolute
@@ -62,7 +62,7 @@ body
 	&.initial
 		zoom 1.5
 		left calc(50% - 190px)
-		
+
 	label
 		background-color #7f8c8d
 		span(1/1)
@@ -71,7 +71,7 @@ body
 		padding 10px
 		box-sizing border-box
 		border-radius 2px 2px 0px 0px
-		
+
 	input[type="text"]
 		span(1/1)
 		border none
@@ -126,7 +126,7 @@ body
 						background-color #2ecc71
 					&.combat
 						background-color #c0392b
-						
+
 				strong
 					font-weight 100
 					color #000
@@ -145,13 +145,11 @@ body
 		justify-content space-between
 		align-items stretch
 		float left
-
 	h1
 		span(1/1)
 		font-family 'Raleway', sans-serif
 		font-size 30px
 		font-weight 100
-		
 	.campaign
 		width 32%
 		background-color #fff
@@ -160,7 +158,6 @@ body
 		margin-bottom 15px
 		box-shadow 0 0 2px 1px rgba(0,0,0,.1)
 		padding-bottom 50px
-
 		figure
 			span(1/1)
 			padding 0px
@@ -211,7 +208,6 @@ body
 			span(1/1)
 			box-sizing border-box
 			border 1px solid #efefef
-	
 .trip
 	width 360px
 	position absolute
@@ -240,8 +236,8 @@ body
 			margin 10px
 		.adp-directions
 			width 100%
-	
-.placeInfo	
+
+.placeInfo
 	width 360px
 	position absolute
 	background-color #fff
@@ -250,7 +246,7 @@ body
 	z-index 999
 	left 10px
 	box-shadow 0 0 5px 1px rgba(0,0,0,.2)
-	
+
 	h1, h2
 		padding 0px
 		margin 0px
@@ -270,7 +266,7 @@ body
 	ul
 		padding 10px
 		margin 0px
-		
+
 		li
 			display inline-block
 			background-color #2ecc71
@@ -312,7 +308,7 @@ body
 	a
 		text-decoration none
 		color #ecf0f1
-		
+
 #news
 	article
 		font-size 12px
@@ -333,3 +329,214 @@ body
 		transform rotate(0deg)
 	100%
 		transform rotate(360deg)
+
+.hide-map
+	margin-top -5px
+	position relative
+	background-color #ffc234
+	height 30px
+	width 100%
+	text-align center
+	.hide-map-text-container
+		position absolute
+		top -15px
+		margin-left -52px
+		background-color #ffc334
+		padding 6px 17px
+		border-radius 3px
+		&:hover
+			cursor pointer
+		p
+			font-size 10px
+			border-top 1px solid black
+			border-bottom 1px solid black
+			display inline-block
+			margin 0
+			color #000
+			text-transform uppercase
+			font-weight 300
+
+.actual-situation
+	background-color #feefc4
+	.actual-situation-flex
+		display block
+		// justify-content space-around
+		max-width 1200px
+		margin 0 auto
+		color white
+		text-align center
+		h3
+			color white
+			font-size 40px
+			margin 0
+		p
+			margin 0
+			text-transform uppercase
+
+.actual-situation-box
+	display inline-block
+	width 14%
+	padding 10px
+	margin-top 20px
+	margin-bottom 20px
+
+.afected-areas
+	display inline-block
+	width 26%
+	background-color grey
+
+.actual-situation-box.active
+	background-color #c0392b
+
+.actual-situation-box.fighting
+	background-color #ff440d
+
+.actual-situation-box.controlled
+	background-color #ffc334
+
+.actual-situation-box.extinguish
+	background-color #3f9500
+
+.campaing-flex
+	display flex
+	flex-flow row wrap
+	margin 10px 0 50px 0
+	h2
+		text-transform uppercase
+
+.campaigns-and-donations
+	flex 2
+	padding-left 10px
+
+.card
+	display inline-block
+	width 46.5%
+	background-color white
+	margin 5px
+	padding 5px
+	box-shadow 0 1px 1px rgba(0, 0, 0, 0.3)
+	a
+		text-decoration none
+
+.card-flex
+	display flex
+	flex-flow row wrap
+	img
+		display inline-block
+		height 110px
+		margin 0
+		margin-right 10px
+	.card-text
+		display inline-block
+		flex 2.5
+		h4
+			margin 0
+		p
+			margin 0
+			color black
+			font-size 10px
+		.campaign-url
+			margin-top 10px
+
+.onemi-news-container
+	flex 1
+	padding-right 10px
+	h2
+		display inline-block
+	p
+		display inline-block
+		font-size 10px
+		color black
+	.onemi-news
+		height 360px
+		margin-top 5px
+		background-color white
+		box-shadow 0 1px 1px rgba(0, 0, 0, 0.3)
+		padding: 10px
+
+.partners
+	background-color white
+	margin-top 10px
+
+.partners
+	padding 30px 0
+	.content
+		text-align center
+		.partners-flex
+			display flex
+			flex-flow row wrap
+			align-items center
+			justify-content space-around
+			a
+				font-size 0
+				figure
+					display inline-block
+					width 60px
+					margin 40px 20px
+					img
+						width 100%
+
+
+
+
+@media screen and (max-width: 1220px)
+
+	.onemi-news-container
+		p
+			display none
+
+@media screen and (max-width: 980px)
+
+	.actual-situation-flex
+		p
+			font-size 12px
+
+	.card
+		width 96%
+
+	.campaigns-and-donations
+		flex 1
+
+	.onemi-news-container
+		margin-left 10px
+
+	.partners-flex
+		a
+			figure
+				width 50px
+
+@media screen and (max-width: 670px)
+
+	.actual-situation
+		.actual-situation-flex
+			padding-bottom 1px
+			h3
+				font-size 30px
+			p
+				font-size 8px
+
+	.actual-situation-flex
+		display inline-block ! important
+
+	.actual-situation-box
+		width 17%
+
+	.afected-areas
+		display block
+		margin 0 auto
+		width: 80%
+		margin-bottom 20px
+
+	.card-flex
+		img
+			height 80px
+
+	.campaigns-and-donations
+		flex 100%
+		padding-left 5px
+		padding-right 5px
+
+	.partners-flex
+		a
+			figure
+				margin 20px 10px  !important
