@@ -1,29 +1,3 @@
-<div class="placeInfo" ng-show="showPlace">
-	<h1>{{ place.name }}</h1>
-	<h2>{{ place.address }}</h2>
-	<h2 ng-if="place.schedule.length > 0 ">Horario: {{ place.schedule }}</h2>
-	<h2>Tipo de donación</h2>
-	<ul ng-show="place.product_type">
-		<li ng-repeat="type in place.product_type track by $index">{{ type }}</li>
-	</ul>
-	<img ng-show="place.image" src="{{ place.image }}" style="width:100%"/>
-	<img ng-hide="place.image" src="https://maps.googleapis.com/maps/api/streetview?size=600x300&location={{ place.pos.lat }},{{ place.pos.lon }}&heading=151.78&pitch=-0.76&key=AIzaSyAcC-IRRpgd0zHOKr65DqfIlsS8zBE9ppU" style="width:100%"/>
-</div>
-<div class="trip">
-	<h2>Alertas Onemi</h2>
-	<div id="indications">
-		<ul class="onemi-alerts">
-			<li ng-repeat="alert in alerts | filter:'incendio forestal'">
-				<a ng-href="http://www.onemi.cl/{{ alert.url }}" target="blank_">
-					<img ng-src="http://www.onemi.cl/{{ alert.image }}"/>
-					<strong>
-						<span class="place">{{ alert.place }}</span> - {{ alert.title }} - {{ alert.day }} {{ alert.hour }}</strong>
-				</a>
-			</li>
-		</ul>
-	</div>
-</div>
-
 <div id="principal-map">
 	<iframe id="ushahidi" width="560" height="480" src="https://chileayuda.ushahidi.io/views/map" frameborder="0" allowfullscreen></iframe>
 	<div class="hide-map">
@@ -35,106 +9,45 @@
 <section class="actual-situation">
 	<div class="actual-situation-flex">
 		<div class="actual-situation-box active">
-			<h3 class="actual-stituation-number">119</h3>
+			<h3 class="actual-stituation-number">{{ actualSituation[0].actives }}</h3>
 			<p>Incendios</p>
 			<p>Activos</p>
 		</div>
 		<div class="actual-situation-box fighting">
-			<h3 class="actual-stituation-number">119</h3>
+			<h3 class="actual-stituation-number">{{ actualSituation[0].combat }}</h3>
 			<p>Incendios</p>
 			<p>En Combate</p>
 		</div>
 		<div class="actual-situation-box controlled">
-			<h3 class="actual-stituation-number">50</h3>
+			<h3 class="actual-stituation-number">{{ actualSituation[0].controlled }}</h3>
 			<p>Incendios</p>
 			<p>Controlados</p>
 		</div>
 		<div class="actual-situation-box extinguish">
-			<h3 class="actual-stituation-number">0</h3>
+			<h3 class="actual-stituation-number">{{ actualSituation[0].killed }}</h3>
 			<p>Incendios</p>
 			<p>Extinguidos</p>
 		</div>
 		<div class="actual-situation-box afected-areas">
-			<h3 class="actual-stituation-number">300.000</h3>
+			<h3 class="actual-stituation-number">{{ actualSituation[0].totalha }}</h3>
 			<p>Hectáreas</p>
 			<p>Perdidas o afectadas</p>
 		</div>
 	</div>
 </section>
-
 <section>
 	<div class="content">
 		<div class="campaing-flex">
 			<div class="campaigns-and-donations">
 				<h2>Campañas y donaciones</h2>
-				<div class="card">
-					<a href="#">
+				<div class="card" ng-repeat="campaign in campaigns">
+					<a href="{{ campaign.acf.url }}">
 						<div class="card-flex">
-							<img src="http://www.chileayuda.com/blog/wp-content/uploads/2017/01/emergencia-incendio-213-e1485519554765.png" alt="">
+							<img src="{{ campaign.acf.principal_image }}" alt="">
 							<div class="card-text">
-								<h4>Juntos por Chile</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolores eum possimus, assumenda veritatis, amet.</p>
-								<p class="campaign-url">http://www.techo.org/</p>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="card">
-					<a href="#">
-						<div class="card-flex">
-							<img src="http://www.chileayuda.com/blog/wp-content/uploads/2017/01/emergencia-incendio-213-e1485519554765.png" alt="">
-							<div class="card-text">
-								<h4>Juntos por Chile</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolores eum possimus, assumenda veritatis, amet.</p>
-								<p class="campaign-url">http://www.techo.org/</p>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="card">
-					<a href="#">
-						<div class="card-flex">
-							<img src="http://www.chileayuda.com/blog/wp-content/uploads/2017/01/emergencia-incendio-213-e1485519554765.png" alt="">
-							<div class="card-text">
-								<h4>Juntos por Chile</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolores eum possimus, assumenda veritatis, amet.</p>
-								<p class="campaign-url">http://www.techo.org/</p>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="card">
-					<a href="#">
-						<div class="card-flex">
-							<img src="http://www.chileayuda.com/blog/wp-content/uploads/2017/01/emergencia-incendio-213-e1485519554765.png" alt="">
-							<div class="card-text">
-								<h4>Juntos por Chile</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolores eum possimus, assumenda veritatis, amet.</p>
-								<p class="campaign-url">http://www.techo.org/</p>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="card">
-					<a href="#">
-						<div class="card-flex">
-							<img src="http://www.chileayuda.com/blog/wp-content/uploads/2017/01/emergencia-incendio-213-e1485519554765.png" alt="">
-							<div class="card-text">
-								<h4>Juntos por Chile</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolores eum possimus, assumenda veritatis, amet.</p>
-								<p class="campaign-url">http://www.techo.org/</p>
-							</div>
-						</div>
-					</a>
-				</div>
-				<div class="card">
-					<a href="#">
-						<div class="card-flex">
-							<img src="http://www.chileayuda.com/blog/wp-content/uploads/2017/01/emergencia-incendio-213-e1485519554765.png" alt="">
-							<div class="card-text">
-								<h4>Juntos por Chile</h4>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At dolores eum possimus, assumenda veritatis, amet.</p>
-								<p class="campaign-url">http://www.techo.org/</p>
+								<h4>{{ campaign.title.rendered }}</h4>
+								<p>{{ campaign.acf.description }}</p>
+								<p class="campaign-url">{{ campaign.acf.url }}</p>
 							</div>
 						</div>
 					</a>
@@ -145,12 +58,22 @@
 				<h2>Alertas ONEMI</h2>
 				<p>Información oficial desde www.onemi.cl</p>
 				<div class="onemi-news">
+					<ul class="onemi-alerts">
+						<li ng-repeat="alert in alerts | filter:'incendio forestal'">
+							<a ng-href="http://www.onemi.cl/{{ alert.url }}" target="blank_">
+								<img ng-src="http://www.onemi.cl/{{ alert.image }}"/>
+								<strong>
+									<span class="place">{{ alert.place }}</span> - {{ alert.title }} - {{ alert.day }} {{ alert.hour }}</strong>
+							</a>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
 
+<!--
 <section class="partners">
 	<div class="content">
 		<div class="partners-flex">
@@ -238,8 +161,6 @@
 	</div>
 </section>
 
-
-<!--
 <div class="content">
 	<div class="campaign-container">
 		<h1 class="prueba">¿Dónde ayudar?</h1>
@@ -288,7 +209,6 @@
 		</div>
 	</aside>
 </div>
- -->
 
 <section id="more-help">
 	<div class="container">
@@ -302,4 +222,5 @@
 		</a> </br>
 		<h3>Cualquier duda o consulta escríbenos a <a href="mailto:contacto@chileayuda.com">contacto@chileayuda.com</a></h3>
 	</div>
-</section>
+</section> -->
+
