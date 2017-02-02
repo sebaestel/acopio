@@ -37,7 +37,7 @@ app.controller('homeController', function($scope, NgMap, $http) {
 		});	
     // Alertas onemi
 	$http
-		.get('http://www.chileayuda.com/events-onemi.json')
+		.get('data/onemi-test.json')
 		.then(function (response) {
 			$scope.alerts = response.data;
 		});
@@ -49,13 +49,5 @@ app.controller('homeController', function($scope, NgMap, $http) {
 			console.log(response)
 			$scope.actualSituation = response.data;
 		});
-
-
-	// $http
-	// 	.get('data/gas.json')
-	// 	.then(function (response) {
-	// 		$scope.gas = response.data.data;
-	// 	});
-
 
 });
