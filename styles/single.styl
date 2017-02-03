@@ -1,0 +1,170 @@
+
+time
+  font-size 12px
+  margin-top -5px
+
+.breadcrumbs-section
+  height 100px
+  background-color #bfd8ec
+
+.breadcrumb
+  list-style none
+  margin 0
+  li
+    display inline-block
+    margin-top 12px
+    font-size 12px
+    a
+      color black
+      text-decoration none
+      margin-top -1px
+      padding 5px
+      &:hover
+        text-decoration underline
+
+.breadcrumb-home-icon
+  width 20px
+  margin-right 3px
+  margin-bottom -4px
+
+.container-flex
+  display flex
+  flex-flow row wrap
+  max-width 1200px
+  margin 0 auto
+  // padding-left 10px
+  // padding-right 10px
+
+.news
+  display inline-block
+  flex 2
+  margin-left 10px
+  article
+    background-color white
+    padding 20px
+    margin-top 20px
+    margin-right 5px
+    color black
+    box-shadow 0 1px 1px rgba(0, 0, 0, 0.3)
+    h2
+      color #dc4747
+      text-transform uppercase
+      margin 0 0 10px 0
+
+.article-images
+  display flex
+  flex-flow row wrap
+  justify-content space-between
+  figure
+    flex 1
+    margin 5px
+    max-width 214px
+    img
+      width 100%
+
+.more-info
+  border-top 2px solid lightgrey
+  margin-top 10px
+  padding-top 20px
+  h2
+    color #0077b3
+    text-transform uppercase
+    margin 0 0 10px 0
+
+  .more-info-map
+    flex .7
+    img
+      width 100%
+
+  .more-info-details
+    flex 1
+    padding 0 20px
+    ul
+      list-style none
+      padding 0
+      margin 0
+      li
+        border-bottom 1px solid lightgrey
+        padding 10px 0
+        &:first-child
+          padding-top 0
+        h3
+          display inline-block
+          margin 0
+          text-transform uppercase
+        p
+          display inline-block
+
+.aside-news
+  flex 1
+  margin-left 5px
+  margin-right 10px
+
+.other-news
+  background-color white
+  height 390px
+  padding 20px
+  margin-top 20px
+  color black
+  box-shadow 0 1px 1px rgba(0, 0, 0, 0.3)
+  overflow scroll
+  h2
+    color #0077b3
+    text-transform uppercase
+    margin 0 0 10px 0
+  ul
+    list-style none
+    margin 0
+    padding 0
+    li
+      border-bottom 1px solid lightgrey
+      padding-bottom 10px
+      padding-top 10px
+      &:last-child
+        border-bottom none
+      a
+        text-decoration none
+        time
+          color black
+        h3
+          margin 0
+          color #dc4747
+          text-transform uppercase
+          &:hover
+            text-decoration underline
+
+.onemi-news
+  overflow scroll
+  font-size 12px
+
+@media screen and (max-width: 670px)
+
+  .container-flex
+    flex-flow column wrap
+
+  .more-info-map
+    flex 1
+
+  .more-info-details
+    flex 1
+    padding 0 0 ! important 
+    ul
+
+  .news
+    margin 5px
+    article
+      margin-bottom 20px
+      margin-left 5px
+      padding 10px
+
+  .article-images
+    figure:first-child, figure:last-child
+      display none
+    figure
+      flex 1
+      max-width 100%
+
+  .aside-news
+    flex 1
+    margin-left 5px
+    margin-right 10px

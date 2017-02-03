@@ -74,5 +74,13 @@ app.config(function($stateProvider, $urlRouterProvider, $translateProvider) {
                     controller: 'compareController'
                 }
             }
+        })
+        .state('root.single', {
+            url: '/single',
+            views: {
+                'content@': {
+                    templateUrl: 'templates/single.html'
+                }
+            }
         });
 });
